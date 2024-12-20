@@ -5,17 +5,17 @@ import Icon from '../utils/types/tabs'
 
 const TabIcon = ({ icon, color, name, focused }: Icon) => {
   return (
-    <View className="flex items-center justify-center w-16">
+    <View className="items-center justify-center pt-6" >
       <Image
         source={icon}
-        resizeMode="contain"
         className="w-6 h-6"
+        resizeMode='contain' //! Phải sử dụng cái này trong react-native không sử dụng được object contain cho thẻ Image
         tintColor={color}
       />
       <Text
-        className={`text-[10px] text-center ${focused ? 'font-psemibold' : 'font-pregular'
-          }`}
-        style={{ color: color }}
+        className={`text-xs ${focused ? 'font-psemibold' : 'font-pregular'
+          } w-full`}
+        style={{ color: color, }}
       >
         {name}
       </Text>
@@ -56,7 +56,7 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="bookmark"
         options={{
-          title: 'Bookmark',
+          title: 'Bookmarkss',
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
